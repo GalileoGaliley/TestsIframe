@@ -1,0 +1,86 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-width: 130px;
+    height: 100%;
+    overflow: hidden;
+
+    cursor: pointer;
+}
+.bg{
+	position: absolute;
+    background: url(bg.jpg);
+    background-position: 50% 0%;
+    background-repeat: no-repeat;
+    background-color: #0e0e0e;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+}
+.fog{
+    background: url(fog.png) 0% 50% repeat-x;
+    background-size: contain;
+    width: 5230px;
+    height: 2500px;
+    top: 180px;
+    right: 0;
+    animation-name: fog;
+    animation-duration: 400s !important;
+    animation-timing-function: linear !important;
+    animation-iteration-count: infinite !important;
+    opacity: 0.15;
+}
+.container{
+	width: 100%;
+    min-width: 130px;
+    height: 100%;
+    top: 0px;
+    right: 0px;
+    overflow: hidden;
+    position: absolute;
+}
+.anivi{
+	position: relative;
+    top: 0;
+    left: -500px;
+    height: 100%;
+}
+.anivi.move{
+	transform: translateX(500px);
+	transition: transform 700ms;
+}
+.v_container{
+    position: absolute;
+    left: 0;
+    bottom: 10%;
+    margin: 10px;
+
+}
+video{
+    width: 190px;
+    height: 110px;
+}
+.ban{
+    background: url(ban.png) 50% 50% no-repeat;
+    background-size: contain;
+    width: 190px;
+    height: 45px;
+    bottom: 40px;
+    left: 10px;
+    margin: 0 auto;
+    position: absolute;
+
+
+}
+
+@keyframes fog {
+	0% {
+	    transform: translateX(0);
+	}
+	100% {
+	    transform: translateX(2615px);
+	}
+}

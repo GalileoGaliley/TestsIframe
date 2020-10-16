@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Top_banner</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Ваша вёрстка тут -->
+    <div class="bg" id="bg_top" >
+        <div class="fog"></div>
+    </div>
+    <div class="container">
+        <div class="banner"></div>
+        <div class="v_container">
+            <video controls preload muted >
+                    <source src="video.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+                    <source src="video1.webm" type='video/webm; codecs="vp8, vorbis"' />
+                </video>
+            </div>
+        </div>
+    <script>
+        let dataInMessageWithTop = {}; //называю иначе для удобного ориентирования
+
+    window.addEventListener('message',function(event) {
+        let bg = document.getElementById('bg_top');
+        Object.assign(dataInMessageWithTop, JSON.parse(event.data));
+        bg.style.width = dataInMessageWithTop.w + 'px';
+        bg.style.height = dataInMessageWithTop.h + 'px';
+        bg.style.transform = 'translate(-50%, ' + dataInMessageWithTop.scrollPos + 'px)';
+
+});
+        setInterval(function () {
+            console.log(dataInMessageWithTop);
+        }, 5000);
+    /* Ваш код тут */
+    </script>
+    
+    <script>
+        /* Это - функция клика, её не нужно изменять */
+        var x_click=document.getElementsByTagName("body")[0];x_click.addEventListener("click",clickout_1);var clickTag=readGETParameter("dspx_clicktag_p"),dspx_debug=readGETParameter("dspx_debug"),clickoutLinkRedirect=readGETParameter("dspx_clicktag"),clickoutLink2=readGETParameter("dspxct"),clickoutEncodeLevel=readGETParameter("dspx_encodelevel");function readGETParameter(e){for(var c=window.location.search.substring(1).split("&"),i=0;i<c.length;i++){var t=c[i].split("=");if(t[0]==e)return decodeURIComponent(t[1])}return"dspx_encodelevel"==e?2:0}function clickout_1(){fireASCClicks();var e=clickTag;0!=clickoutLinkRedirect&&(e=clickoutLinkRedirect+btoa(e)),0!=clickoutLink2&&(e=clickoutLink2+encodeURIComponent(e)),dspx_debug&&console.log(e),window.open(e)}function fireASCClicks(){var e=function(e,c){for(var i=window.location.search.substring(1).split("&"),t=[],r=0;r<i.length;r++)for(var o=i[r].split("="),n=0;n<c;n++)cc=0==n?e:e+n,o[0]==cc&&t.push(decodeURIComponent(o[1]));return t}("dspx_clicktagASC",5);for(i=0;i<e.length;i++)1==dspx_debug&&console.log("fire Click ASC:"+e[i]),(new Image).src=e[i]}
+    </script>
+</body>
+
+</html>

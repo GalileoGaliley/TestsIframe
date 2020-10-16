@@ -1,0 +1,107 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-width: 130px;
+    height: 100%;
+    overflow: hidden;
+
+    cursor: pointer;
+}
+.bg{
+	position: absolute;
+    background: url(bg.jpg);
+    background-position: 50% 0%;
+    background-repeat: no-repeat;
+    background-color: #0e0e0e;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    position: absolute;
+}
+
+.light {
+    background: url(light.png) 50% 50% no-repeat;
+    height: 140px;
+    width: 140px;
+    position: absolute;
+    top: 160px;
+    left: 500px;
+    animation-name: blink;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.right{
+	position: relative;
+    height: 100%;
+    max-width: 50%;
+    left: 50%;
+}
+.container{
+    width: 100%;
+    min-width: 130px;
+    height: 100%;
+    top: 0px;
+    right: 0px;
+    overflow: hidden;
+    position: absolute;
+}
+.anivi{
+    position: relative;
+    top: 0;
+    right: -500px;
+    height: 100%;
+}
+.anivi.move{
+    transform: translateX(-500px);
+    transition: transform 700ms;
+}
+.v_container{
+    position: absolute;
+    right: 0;
+    bottom: 10%;
+    margin: 10px;
+
+}
+.banner{
+    background: url('banner.png');
+    background-repeat: no-repeat;
+    width: 190px;
+    height: 110px;
+    background-size: contain;
+}
+.ban{
+    background: url(ban.png) 50% 50% no-repeat;
+    background-size: contain;
+    width: 190px;
+    height: 45px;
+    bottom: 40px;
+    right: 10px;
+    margin: 0 auto;
+    margin-top: 20px;
+    position: absolute;
+
+
+}
+@keyframes blink{
+	0%{
+		opacity:0%; 
+	}
+	25%{
+		opacity: 0%;
+	}
+	50%{
+		opacity: 100%;
+	}
+	75%{
+		opacity: 0%;
+	}
+	100%{
+		opacity:0%;
+	}
+}
